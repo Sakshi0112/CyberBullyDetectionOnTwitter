@@ -1,5 +1,6 @@
 # CyberBullyDetectionOnTwitter
-##Abusiv-O-Meter: CyberBullying and CyberAggression Detection On Twitter
+
+**Abusiv-O-Meter: CyberBullying and CyberAggression Detection On Twitter**
 
 Social Networking platforms hold great power in shaping the opinions and the thoughts of individuals. 
 At the same time it may have negative impact of individuals such as cyberbullying and cyberaggression. 
