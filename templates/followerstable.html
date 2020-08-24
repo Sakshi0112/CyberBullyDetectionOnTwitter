@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Lets stop cyberbullying Dashboard</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/light-bootstrap-dashboard.css') }}">
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/pe-icon-7-stroke.css') }}">
+
+</head>
+
+<style>
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(53, 135, 168);
+  color: white;
+  letter-spacing: 0.03em
+  padding-top: 18px;
+padding-bottom: 18px;
+text-align: center;
+font-weight: 700;
+line-height: 1.5;
+letter-spacing: 0.04em;
+font-size: 14px;
+}
+
+.column1 {
+	width:15%;
+	padding-left: 40px;
+}
+
+
+.column2 {
+  width: 10%;
+}
+
+.column3 {
+  width: 10%;
+}
+
+.column4 {
+  width: 10%;
+  padding-left: 40px;
+}
+
+</style>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-image="">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="https://www.stopbullying.gov/cyberbullying/what-is-it" class="simple-text">
+                   <img src={{url_for('static', filename = 'img/bluelogo.png')}} height="86" width="86"><br> ABUSIV-O-METER
+                </a>
+            </div>
+<br>
+            <ul class="nav">
+                <li class="active">
+                    <a href="{{url_for('dash')}}">
+                        <i class="pe-7s-culture"></i>
+                        <p>HOME </p>
+                    </a>
+                </li>
+                 <li>
+                    <a href="{{url_for('userup')}}">
+                        <i class="pe-7s-user"></i>
+                        <p> Edit Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('trend_analysis')}}">
+                        <i class="pe-7s-angle-right-circle"></i>
+                        <p>Hashtag Analysis</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('tweet_analyzer')}}">
+                        <i class="pe-7s-note2"></i>
+                        <p> Tweet analysis</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('load_account_page')}}">
+                        <i class="pe-7s-id"></i>
+                        <p>User Account Analysis</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('fri')}}">
+                        <i class="pe-7s-users"></i>
+                        <p>Friends Analysis  </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('foll')}}">
+                        <i class="pe-7s-users"></i>
+                        <p> Followers Analysis</p>
+                    </a>
+                </li>
+
+
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><font color=" #05386B">Let's Stop Cyberbullying</font> </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+
+
+
+
+                         <li class="dropdown">
+                            <a href="https://twitter.com/login?lang=en" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-twitter-square "></i>
+								<p class="hidden-lg hidden-md">Dashboard</p>
+
+                            </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="https://twitter.com/login?lang=en"><i class="fa fa-sign-in"></i> Login to twitter</a></li>
+                                <li><a href="https://twitter.com/i/flow/signup"><i class="fa fa-pencil"></i> Register with twitter</a></li>
+
+                              </ul>
+
+                        </li>
+
+
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret hidden-lg hidden-md"></b>
+									<p class="hidden-lg hidden-md">
+										2 Notifications
+										<b class="caret"></b>
+									</p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="https://timesofindia.indiatimes.com/topic/cyberbullying">    <i class="fa fa-minus-square"></i>AntibullyLaws 1</a></li>
+                                <li><a href="https://www.forbes.com/sites/niallmccarthy/2018/10/29/new-report-cyberbullying-is-most-prevalent-in-india-infographic/#13476bd77537"><i class="fa fa-square"></i>Cyber crimes 2</a></li>
+
+                              </ul>
+
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+
+
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p><img src="{{url_for('static', filename = 'img/anime3.png')}} " height="30" width="30"><b class="caret"></b>
+									</p>
+
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="{{url_for('editP')}}"><i class="fa fa-pencil-square-o"></i>User Profile</a></li>
+                                <li><a href="{{url_for('dash')}}"><i class="fa fa-refresh"></i>Refresh</a></li>
+                                <li><a href="{{url_for('logout')}}"><i class="fa fa-power-off "></i>Logout</a></li>
+
+                              </ul>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+<!--
+
+<div >
+    <br>
+                <table id="customers">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+      <th>another</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Königlich Essen</td>
+    <td>Philip Cramer</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>Simon Crowther</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Paris spécialités</td>
+    <td>Marie Bertrand</td>
+    <td>France</td>
+  </tr>
+</table>
+
+</div>
+-->
+
+        <div class="col-md-12">
+                            <div class="card card-plain table-plain-bg">
+                                <div class="card-header ">
+                                    <h4 class="card-title" style="color: rgb(53, 135, 168);text-align: center;font-weight:600;">Followers Analysis of {{title}}</h4>
+                                    <!--<p class="card-category">Here is a subtitle for this table</p>-->
+                                </div>
+                                <div class="card-body table-full-width table-responsive">
+                                    <table class="table table-hover" id="customers">
+                                        <thead style="font-weight: 700;">
+                                        <th class="column1">Profile_Image</th>
+                                        <th style="font-weight: 700;" class="column2">Name</th>
+                                            <th class="column3">Screen_Name</th>
+
+                                            <th class="column4">FinalResult</th>
+
+                                            <!--<th>City</th>-->
+                                        </thead>
+                                        {% for i in items %}
+                                        <tbody>
+
+                                            <tr>
+                                                <td class="column1"><img src="{{i.fprofile_image_url}}" height="100px" width="100px"></td>
+                                                <td class="column2">{{i.fname}}</td>
+                                                <td class="column3">@{{i.fscreen_name}}</td>
+                                                {% if i.finalresult>=10 %}
+
+                                                <td class="column4" style="color:rgb(255, 98, 88);">{{i.finalresult}}%</td>
+                                                {% else %}
+                                                <td class="column4" style="color:#19d895;" >{{i.finalresult}}%</td>
+                                                {% endif %}
+
+                                            </tr>
+
+                                        </tbody>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+</div>
+</div>
+</body>
+</html>

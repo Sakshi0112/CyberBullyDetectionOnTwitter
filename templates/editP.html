@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Lets stop cyberbullying Dashboard</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/light-bootstrap-dashboard.css') }}">
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/pe-icon-7-stroke.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-image="">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="https://www.myadvo.in/blog/must-read-what-is-cyber-bullying-or-anti-bullying-laws-in-india" class="simple-text">
+                   <img src={{url_for('static', filename = 'img/bluelogo.png')}} height="86" width="86"><br> ABUSIV-O-METER
+                </a>
+            </div>
+<br>
+            <ul class="nav">
+                <li class="active">
+                    <a href="{{url_for('dash')}}">
+                        <i class="pe-7s-culture"></i>
+                        <p>HOME </p>
+                    </a>
+                </li>
+                 <li>
+                    <a href="{{url_for('userup')}}">
+                        <i class="pe-7s-user"></i>
+                        <p> Edit Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('trend_analysis')}}">
+                        <i class="pe-7s-angle-right-circle"></i>
+                        <p>Hashtag Analysis</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('tweet_analyzer')}}">
+                        <i class="pe-7s-note2"></i>
+                        <p> Tweet analysis</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('load_account_page')}}">
+                        <i class="pe-7s-id"></i>
+                        <p>User Account Analysis</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('fri')}}">
+                        <i class="pe-7s-users"></i>
+                        <p>Friends Analysis  </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('foll')}}">
+                        <i class="pe-7s-users"></i>
+                        <p> Followers Analysis</p>
+                    </a>
+                </li>
+
+
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   <a class="navbar-brand" href="https://ifflab.org/how-to-prevent-cyber-bullying-anti-cyber-bullying-laws-in-india/"><font color=" #05386B">Let's Stop Cyberbullying</font> </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+
+
+
+
+                         <li class="dropdown">
+                            <a href="https://twitter.com/login?lang=en" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-twitter-square "></i>
+								<p class="hidden-lg hidden-md">Dashboard</p>
+
+                            </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="https://twitter.com/login?lang=en"><i class="fa fa-sign-in"></i> Login to twitter</a></li>
+                                <li><a href="https://twitter.com/i/flow/signup"><i class="fa fa-pencil"></i> Register with twitter</a></li>
+
+                              </ul>
+
+                        </li>
+
+
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret hidden-lg hidden-md"></b>
+									<p class="hidden-lg hidden-md">
+										2 Notifications
+										<b class="caret"></b>
+									</p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="https://timesofindia.indiatimes.com/topic/cyberbullying">    <i class="fa fa-minus-square"></i>AntibullyLaws 1</a></li>
+                                <li><a href="https://www.forbes.com/sites/niallmccarthy/2018/10/29/new-report-cyberbullying-is-most-prevalent-in-india-infographic/#13476bd77537"><i class="fa fa-square"></i>Cyber crimes 2</a></li>
+
+                              </ul>
+
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+
+
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p><img src="{{url_for('static', filename = 'img/anime3.png')}} " height="30" width="30"><b class="caret"></b>
+									</p>
+
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="{{url_for('editP')}}"><i class="fa fa-pencil-square-o"></i>User Profile</a></li>
+                                <li><a href="{{url_for('dash')}}"><i class="fa fa-refresh"></i>Refresh</a></li>
+                                <li><a href="{{url_for('logout')}}"><i class="fa fa-power-off "></i>Logout</a></li>
+
+                              </ul>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+
+<div class="col-md-12">
+                        <div class="card card-user">
+                         <center>  <h4><u><font color="blue"> User Profile</font></u></h4></center> <br><br>
+                            <div class="content">
+                                <div class="author">
+                                     <a href="#">
+                                         <br><br><br><br>
+                                    <img class="avatar border-gray" src="{{url_for('static', filename = 'img/default-avatar.png')}}" alt="..."/>
+
+                                     {% block content %}
+
+<p><font color="blue"><h2>Welcome back, {{ username }}!</h2> </font></p>
+{% endblock %}
+
+                                      </h4>
+                                    </a>
+                                </div>
+
+<br><br><br>
+                            <div class="text-center">
+                                <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</body>
+</html>
