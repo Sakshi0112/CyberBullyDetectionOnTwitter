@@ -88,10 +88,10 @@ def model(tweet):
 
 
 def api_creation():
-    access_key = "1136284891031597056-YLsUhgdABB6i7h4TSLOWvJFs7RlXxs"
-    access_secret = "QKXYm4F2j8l9jbxUz9jLPVnWVcJAxs7WQTeYPGOa7Wq5v"
-    consumer_key = "hcoh0UTyaBrbCDP1QjKriOjXc"
-    consumer_secret = "Jtw3TB8CmyzUTlHkt4UHhvg3zcM1KMm4RBM9N2ebBxOedgnx8o"
+    access_key = ""
+    access_secret = ""
+    consumer_key = ""
+    consumer_secret = ""
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth)
