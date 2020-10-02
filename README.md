@@ -1,4 +1,4 @@
-# CyberBullyDetectionOnTwitter
+# CyberBully Detection On Twitter
 
 **Abusiv-O-Meter: CyberBullying and CyberAggression Detection On Twitter**
 
